@@ -28,5 +28,17 @@ pipeline {
             }
         }
     }
+
+post {
+        success {
+            // Étape à exécuter si le build a réussi (envoi d'e-mail)
+            emailext (
+                subject: "Build réussi : ${currentBuild.fullDisplayName}",
+                body: "Le build a réussi. Bravo !",
+                recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']]
+            )
+        }
+    }
+    
 }
 
