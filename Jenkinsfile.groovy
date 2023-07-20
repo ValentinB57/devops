@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Run Tests') {
             steps {
-                sh "grep -q '<h1>Fromage</h1>' /chemin/vers/index.html"
+                sh "grep -q '<h1>Fromage</h1>' /var/lib/jenkins/workspace/tpadmin/index.html"
             }
             post {
                 always {
