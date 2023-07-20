@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     triggers {
-        webhook()
+        pollSCM('H/5 * * * *')
     }
 
     stages {
